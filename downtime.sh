@@ -9,9 +9,6 @@ hostfile=$1
 period=$2
 note=$3
 
-echo $hostfile name
-echo $# arguments
-
 cat "$hostfile" | while read line; do
   sudo /data/bin/nagiosctl downtime $line "$period" "$note"
 done
